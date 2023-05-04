@@ -21,4 +21,34 @@
 
 body {
   font-family: "Medium";
+}
+
+@font-face {
+  font-family: "Light";
+  src: local("Roboto-Light"), url("../../assets/font/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Medium";
+  src: local("Roboto-Medium"), url("../../assets/font/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bold";
+  src: local("Roboto-Bold"), url("../../assets/font/Roboto-Bold.ttf") format("truetype");
+}
+/*|---------------| App Color Schema|---------------*/
+/*|---------------|MIXINS|---------------*/
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #020203;
+  width: 100%;
+}
+.navContainer a {
+  margin: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: "medium";
 }/*# sourceMappingURL=Main.css.map */

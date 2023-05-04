@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Light";
+  src: local("Roboto-Light"), url("../../assets/font/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Medium";
+  src: local("Roboto-Medium"), url("../../assets/font/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bold";
+  src: local("Roboto-Bold"), url("../../assets/font/Roboto-Bold.ttf") format("truetype");
+}
+/*|---------------| App Color Schema|---------------*/
+/*|---------------|MIXINS|---------------*/
+.sideBarContainer {
+  position: absolute;
+  height: 100vh;
+  width: 117px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #020203;
+}
+.sideBarContainer .LogoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.sideBarContainer img {
+  margin-bottom: 20px;
+}
+.sideBarContainer .spacer {
+  flex-grow: 1;
+}
+.sideBarContainer .copyright {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  font-family: "medium";
+  font-size: 12px;
+  transform: rotate(270deg);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+  padding: 0;
+}
+.sideBarContainer .copyright p {
+  white-space: nowrap;
+}/*# sourceMappingURL=SideBar.css.map */

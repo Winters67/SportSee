@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import DataService from '../data/DataService';
+import DataService from '../../data/DataService';
 
-const MyComponent = () => {
+const UserData = () => {
     const [userData, setUserData] = useState();
 
     useEffect(() => {
@@ -27,4 +27,4 @@ const MyComponent = () => {
     );
 }
 
-export default MyComponent;
+export default UserData;

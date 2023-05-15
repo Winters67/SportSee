@@ -12,6 +12,26 @@
 }
 /*|---------------| App Color Schema|---------------*/
 /*|---------------|MIXINS|---------------*/
-.homeContainer {
-  height: 728px;
+.homeContainer h1 {
+  margin: 50px;
+  padding-left: 200px;
+  font-size: 48px;
+  font-family: "bold";
+}
+.homeContainer h1 span {
+  color: #ff0101;
+}
+.homeContainer h2 {
+  padding-left: 200px;
+  font-size: 18px;
+  font-family: "medium";
+}
+
+.containerNutritional {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionContainer {
+  display: flex;
 }/*# sourceMappingURL=Home.css.map */

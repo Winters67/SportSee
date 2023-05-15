@@ -8,7 +8,7 @@ const NavBar = () => {
     return (
         <div className='navContainer'>
             <Link to="/" >
-                <img src={Logo} alt="Logo SportSee" />
+                <img  src={Logo} alt="Logo SportSee" />
             </Link>
             <Link to="/" >Accueil</Link>
             <Link to="/Profil" >Profil</Link>

@@ -27,4 +27,8 @@
   font-size: 24px;
   cursor: pointer;
   font-family: "medium";
+}
+.navContainer img {
+  width: 178px;
+  height: 60;
 }/*# sourceMappingURL=NavBar.css.map */

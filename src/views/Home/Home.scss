@@ -1,6 +1,28 @@
 @import "../../assets/scss/config";
 
-.homeContainer{
+.homeContainer {
+  h1 {
+    margin: 50px;
+    padding-left: 200px;
+    font-size: 48px;
+    font-family: "bold";
+    span {
+      color: #ff0101;
+    }
+  }
+  h2 {
+    padding-left: 200px;
+    font-size: 18px;
+    font-family: "medium";
+  }
+}
+.containerNutritional {
+  display: flex;
+  flex-direction: column;
+  // margin-left: 200px;
+}
 
- height: 728px;
+
+.sectionContainer{
+  display: flex;
 }

@@ -20,6 +20,8 @@
 }
 
 body {
+  min-width: 1024px;
+  margin: 0 auto;
   font-family: "Medium";
 }
 
@@ -52,6 +54,10 @@ body {
   font-size: 24px;
   cursor: pointer;
   font-family: "medium";
+}
+.navContainer img {
+  width: 178px;
+  height: 60;
 }
 
 @font-face {
@@ -127,7 +133,7 @@ body {
   display: flex;
   width: 258px;
   height: 124px;
-  background-color: #fbfbfb;
+  background-color: #cac5c5;
   margin-bottom: 40px;
   padding-left: 32px;
   align-items: center;
@@ -169,9 +175,12 @@ img {
 }
 /*|---------------| App Color Schema|---------------*/
 /*|---------------|MIXINS|---------------*/
+.homeContainer {
+  margin-left: 226px;
+}
 .homeContainer h1 {
   margin: 50px;
-  padding-left: 200px;
+  padding: 10px;
   font-size: 48px;
   font-family: "bold";
 }
@@ -179,13 +188,23 @@ img {
   color: #ff0101;
 }
 .homeContainer h2 {
-  padding-left: 200px;
+  padding: 20px;
   font-size: 18px;
   font-family: "medium";
+}
+.homeContainer .ChartContainer {
+  max-width: 835px;
+  max-height: 320px;
+  background-color: #cac5c5;
 }
 
 .containerNutritional {
   display: flex;
   flex-direction: column;
-  margin-left: 200px;
+}
+
+.sectionContainer {
+  display: flex;
+  left: 226px;
+  justify-content: space-between;
 }/*# sourceMappingURL=Main.css.map */

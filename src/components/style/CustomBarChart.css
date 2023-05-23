@@ -1,3 +1,45 @@
 .CustomBar {
-  padding-left: 200px;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.CustomBar h2 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+}
+.CustomBar .legend {
+  margin: 50px;
+}
+.CustomBar .custom-tooltip {
+  min-width: 39px;
+  height: 63px;
+  color: #ffffff;
+  background-color: #e60000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+}
+.CustomBar .custom-tooltip p {
+  text-align: center;
+  text-align: justify;
+  font-size: 7px;
+  padding: 7px;
+}
+
+.chart-container {
+  width: 100%;
+  width: 835px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.rechart-surface {
+  width: 100%;
+  height: auto;
 }/*# sourceMappingURL=CustomBarChart.css.map */

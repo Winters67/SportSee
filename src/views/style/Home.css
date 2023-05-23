@@ -12,9 +12,12 @@
 }
 /*|---------------| App Color Schema|---------------*/
 /*|---------------|MIXINS|---------------*/
+.homeContainer {
+  margin-left: 226px;
+}
 .homeContainer h1 {
   margin: 50px;
-  padding-left: 200px;
+  padding: 10px;
   font-size: 48px;
   font-family: "bold";
 }
@@ -22,9 +25,14 @@
   color: #ff0101;
 }
 .homeContainer h2 {
-  padding-left: 200px;
+  padding: 20px;
   font-size: 18px;
   font-family: "medium";
+}
+.homeContainer .ChartContainer {
+  max-width: 835px;
+  max-height: 320px;
+  background-color: #cac5c5;
 }
 
 .containerNutritional {
@@ -34,4 +42,12 @@
 
 .sectionContainer {
   display: flex;
+  left: 226px;
+  justify-content: space-between;
+}
+
+.LineContainer {
+  background-color: red;
+  width: 500px;
+  height: 500px;
 }/*# sourceMappingURL=Home.css.map */

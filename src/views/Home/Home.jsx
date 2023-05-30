@@ -20,12 +20,13 @@ const Home = () => {
     const [userAverageSessions, setUserSession] = useState();
     const [userPerformance, setUserPerformance] = useState();
 
-
+    // True ou false dataMock
 
     useEffect(() => {
         const fetchUserData = async () => {
             const result = await DataService.getUserData(12
             );
+            // const result = dataMock ? serviceMock : await DataService.getUserData(12);
             console.log(result.data)
             setUserData(result.data);
         };

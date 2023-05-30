@@ -1,15 +1,15 @@
 import React from 'react';
 import "../CustomLineChart/CustomLineChart.scss"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, Tooltip, XAxis } from 'recharts';
 import CustomTooltip from './CustomTooltip';
 
 const CustomLineChart = ({ data }) => {
 
+    const daysOfTheWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+
     if (!data || !data.sessions) {
         return <div>Chargement...</div>;
     }
-
-  
 
     return (
         <div>
@@ -25,16 +25,16 @@ const CustomLineChart = ({ data }) => {
                     bottom: 5,
                 }}
             >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
-                <YAxis />
+                <XAxis dataKey="" tickFormatter={(tickItem) => daysOfTheWeek[tickItem]} axisLine={false} stroke="#FFFFFF" />
+
                 <Tooltip content={<CustomTooltip />} position={{ y: 0 }} />
-                <Legend />
+
                 <Line
                     type="monotone"
                     dataKey="sessionLength"
                     stroke="#FFFFFF"
-                    activeDot={{ r: 8 }}
+                    activeDot={{ r: 3 }}
+                    dot={false}
                 />
             </LineChart>
 

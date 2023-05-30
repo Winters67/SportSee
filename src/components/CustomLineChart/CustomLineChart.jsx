@@ -1,5 +1,5 @@
 import React from 'react';
-import "../CustomLineChart/CustomLineChart.scss"
+import "./CustomLineChart.scss"
 import { LineChart, Line, Tooltip, XAxis } from 'recharts';
 import CustomTooltip from './CustomTooltip';
 
@@ -12,8 +12,8 @@ const CustomLineChart = ({ data }) => {
     }
 
     return (
-        <div>
-
+        <div style={{ position: 'relative' }}>
+            <div className='chartLineLabel'>Durée moyenne des sessions</div>
             <LineChart
                 width={258}
                 height={263}
@@ -27,7 +27,8 @@ const CustomLineChart = ({ data }) => {
             >
                 <XAxis dataKey="" tickFormatter={(tickItem) => daysOfTheWeek[tickItem]} axisLine={false} stroke="#FFFFFF" />
 
-                <Tooltip content={<CustomTooltip />} position={{ y: 0 }} />
+                <Tooltip content={<CustomTooltip />} position={{ y: 100 }} cursor={{ stroke: 'rgba(0, 0, 0, 0.2)', strokeWidth: 60 }} />
+
 
                 <Line
                     type="monotone"
@@ -37,6 +38,7 @@ const CustomLineChart = ({ data }) => {
                     dot={false}
                 />
             </LineChart>
+
 
         </div>
     );

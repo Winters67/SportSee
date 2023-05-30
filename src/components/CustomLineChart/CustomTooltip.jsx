@@ -11,11 +11,11 @@ const CustomTooltip = ({ active, payload, coordinate }) => {
     return (
       <div className='ContainerTime'>
 
-      <div className={tooltipClasses}>
-        <p className="label"> {sessionLength} min</p>
+        <div className={tooltipClasses}>
+          <p className="label"> {sessionLength} min</p>
 
 
-      </div>
+        </div>
       </div>
     );
   }

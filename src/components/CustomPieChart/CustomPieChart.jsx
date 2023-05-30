@@ -8,7 +8,7 @@ const CustomPieChart = ({ data }) => {
 
   return (
     <div style={{ position: 'relative', width: 258, height: 263 }}>
-<div className='chartLabel'>Score</div>
+<div className='chartPieLabel'>Score</div>
       <PieChart className='CustomPie' width={258} height={263}>
         <Pie
           data={chartData}

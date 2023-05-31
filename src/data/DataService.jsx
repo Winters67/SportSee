@@ -23,5 +23,5 @@ class DataService {
     return axios.post(API_URL, data);
   }
 }
-
-export default new DataService();
+const dataServiceInstance = new DataService();
+export default dataServiceInstance;

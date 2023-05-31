@@ -7,10 +7,10 @@ const UserData = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             const result = await DataService.getUserData(12);
-            console.log(result.data)
             setUserData(result.data);
+            console.log(result.data)
         };
-
+        
         fetchUserData();
     }, []);
 

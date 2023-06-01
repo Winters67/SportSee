@@ -3,10 +3,19 @@ import "./CustomLineChart.scss"
 import { LineChart, Line, Tooltip, XAxis } from 'recharts';
 import CustomTooltip from './CustomTooltip';
 
+/**
+ * CustomLineChart Component
+ * 
+ * @component
+ * @param {Object} props
+ * @param {Object} props.data - The data for the chart.
+ * @returns {ReactElement} JSX element
+ */
 const CustomLineChart = ({ data }) => {
 
     const daysOfTheWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
+    // Render loading text if data is not available
     if (!data || !data.sessions) {
         return <div>Chargement...</div>;
     }
@@ -29,7 +38,6 @@ const CustomLineChart = ({ data }) => {
 
                 <Tooltip content={<CustomTooltip />} position={{ y: 100 }} cursor={{ stroke: 'rgba(0, 0, 0, 0.2)', strokeWidth: 60 }} />
 
-
                 <Line
                     type="monotone"
                     dataKey="sessionLength"
@@ -38,8 +46,6 @@ const CustomLineChart = ({ data }) => {
                     dot={false}
                 />
             </LineChart>
-
-
         </div>
     );
 }

@@ -2,11 +2,27 @@ import React from 'react';
 import "../CustomBarChart/CustomBarChart.scss"
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, Text, ResponsiveContainer } from 'recharts';
 
+/**
+ * CustomBarChart Component
+ * 
+ * @component
+ * @param {Object} props
+ * @param {Object} props.data - The data for the chart.
+ * @returns {ReactElement} JSX element
+ */
 const CustomBarChart = ({ data }) => {
 
   const maxAxisYValue = Math.max(...data.sessions.map(session => session.kilogram));
 
-
+  /**
+   * CustomTooltip component for the CustomBarChart
+   * 
+   * @component
+   * @param {Object} props
+   * @param {boolean} props.active - Tooltip active state
+   * @param {Object[]} props.payload - Array of data objects
+   * @returns {ReactElement|null} JSX element or null
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -41,18 +57,18 @@ const CustomBarChart = ({ data }) => {
             <Tooltip content={<CustomTooltip />} />
 
             <Legend
-                wrapperStyle={{
-                  top: '20px',
-                  right: '20px',
-                  margin: '20px',
-                  bottom: '100px',
-                  fontSize: '14px'
-                
-                }}
-                verticalAlign="top"
-                align="right"
-                iconType="circle"
-              />
+              wrapperStyle={{
+                top: '20px',
+                right: '20px',
+                margin: '20px',
+                bottom: '100px',
+                fontSize: '14px'
+
+              }}
+              verticalAlign="top"
+              align="right"
+              iconType="circle"
+            />
             <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" barSize={7} radius={[10, 10, 0, 0]} />
             <Bar dataKey="calories" fill="#E60000" name="Calories brûlées (kCal)" barSize={7} radius={[10, 10, 0, 0]} />
             <Text>Activité quotidienne</Text>

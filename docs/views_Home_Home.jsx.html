@@ -1,4 +1,32 @@
-import React, { useState, useEffect } from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: views/Home/Home.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: views/Home/Home.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState, useEffect } from 'react';
 import '../Home/Home.scss';
 import DataService from '../../data/DataService';
 import Nutritional from '../../components/Nutritional/Nutritional';
@@ -75,7 +103,7 @@ const Home = () => {
 
     // Si les données ne sont pas encore chargées, afficher "Loading..."
     if (!userData || !userActivity || !userAverageSessions) {
-        return <div>Loading...</div>;
+        return &lt;div>Loading...&lt;/div>;
     }
 
     // Récupération des données clés
@@ -84,35 +112,58 @@ const Home = () => {
     // Rendu du composant
 
     return (
-        <div className="homeContainer">
-            <h1>Bonjour <span>{userData.data.userInfos.firstName}</span></h1>
-            <h2>Félicitations ! Vous avez explosé vos objectifs hier 👏</h2>
-            <div className="customContainer">
-                <div className="sectionContainer">
-                    <div className="ChartContainer">
-                        <CustomBarChart data={userActivity.data} />
-                    </div>
-                    <div className="containerChardCustom">
-                        <div className="LineContainer items">
-                            <CustomLineChart data={userAverageSessions.data} />
-                        </div>
-                        <div className="RadarContainer items">
-                            <CustomRadarChart data={userPerformance.data} />
-                        </div>
-                        <div className="CustomRadialBarChart items">
-                            <CustomRadialBarChart data={userData.data.todayScore || userData.data.score} />
-                        </div>
-                    </div>
-                </div>
-                <div className="containerNutritional">
-                    <Nutritional logo={calories} title="Calories" value={calorieCount} unit="kcal" />
-                    <Nutritional logo={protein} title="Protéines" value={proteinCount} unit="g" />
-                    <Nutritional logo={carbs} title="Glucides" value={carbohydrateCount} unit="g" />
-                    <Nutritional logo={fat} title="Lipides" value={lipidCount} unit="g" />
-                </div>
-            </div>
-        </div>
+        &lt;div className="homeContainer">
+            &lt;h1>Bonjour &lt;span>{userData.data.userInfos.firstName}&lt;/span>&lt;/h1>
+            &lt;h2>Félicitations ! Vous avez explosé vos objectifs hier 👏&lt;/h2>
+            &lt;div className="customContainer">
+                &lt;div className="sectionContainer">
+                    &lt;div className="ChartContainer">
+                        &lt;CustomBarChart data={userActivity.data} />
+                    &lt;/div>
+                    &lt;div className="containerChardCustom">
+                        &lt;div className="LineContainer items">
+                            &lt;CustomLineChart data={userAverageSessions.data} />
+                        &lt;/div>
+                        &lt;div className="RadarContainer items">
+                            &lt;CustomRadarChart data={userPerformance.data} />
+                        &lt;/div>
+                        &lt;div className="CustomRadialBarChart items">
+                            &lt;CustomRadialBarChart data={userData.data.todayScore || userData.data.score} />
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div className="containerNutritional">
+                    &lt;Nutritional logo={calories} title="Calories" value={calorieCount} unit="kcal" />
+                    &lt;Nutritional logo={protein} title="Protéines" value={proteinCount} unit="g" />
+                    &lt;Nutritional logo={carbs} title="Glucides" value={carbohydrateCount} unit="g" />
+                    &lt;Nutritional logo={fat} title="Lipides" value={lipidCount} unit="g" />
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
     );
 };
 
 export default Home;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DataService.html">DataService</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CustomBarChart">CustomBarChart</a></li><li><a href="global.html#CustomLineChart">CustomLineChart</a></li><li><a href="global.html#CustomPieChart">CustomPieChart</a></li><li><a href="global.html#CustomRadarChart">CustomRadarChart</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#NavBar">NavBar</a></li><li><a href="global.html#Nutritional">Nutritional</a></li><li><a href="global.html#SideBar">SideBar</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed May 31 2023 16:21:30 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

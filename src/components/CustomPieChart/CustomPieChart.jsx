@@ -1,6 +1,16 @@
 import React from 'react';
-import { PieChart, Pie, Cell  } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 import "./CustomPieChart.scss"
+
+
+/**
+ * CustomPieChart Component
+ * 
+ * @component
+ * @param {Object} props
+ * @param {number} props.data - The data for the chart as a decimal (eg. 0.5 for 50%)
+ * @returns {ReactElement} JSX element
+ */
 
 const CustomPieChart = ({ data }) => {
   const percentData = data * 100; // transformer les données en pourcentage
@@ -8,7 +18,7 @@ const CustomPieChart = ({ data }) => {
 
   return (
     <div style={{ position: 'relative', width: 258, height: 263 }}>
-<div className='chartPieLabel'>Score</div>
+      <div className='chartPieLabel'>Score</div>
       <PieChart className='CustomPie' width={258} height={263}>
         <Pie
           data={chartData}
@@ -38,7 +48,7 @@ const CustomPieChart = ({ data }) => {
           dataKey="value"
         >
           <Cell key={`cell-2`} fill="#FF0000" />
-        
+
         </Pie>
       </PieChart>
       <div className='textCenter'>

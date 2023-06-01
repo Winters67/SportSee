@@ -4,6 +4,15 @@ import "./NavBar.scss";
 import React from 'react';
 import Logo from "../../assets/icons/logoSportSee.svg"
 
+/** 
+* NavBar Component
+*
+* This component is responsible for rendering the navigation bar with links to the various routes.
+*
+* @component
+* @returns {ReactElement} JSX element
+*/
+
 const NavBar = () => {
     return (
         <div className='navContainer'>

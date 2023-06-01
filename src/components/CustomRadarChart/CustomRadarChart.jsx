@@ -2,6 +2,19 @@ import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 import "./CustomRadarChart.scss"
 
+
+/**
+ * CustomRadarChart Component
+ * 
+ * @component
+ * @param {Object} data - The data object for the chart
+ * @param {Object[]} data.data.data - Array of objects containing individual data points for the radar chart
+ * @param {number} data.data.data[].value - The value of the individual data point
+ * @param {string} data.data.data[].kind - The kind of the individual data point
+ * @param {Object} data.data.kind - Object with keys as the kind names and values as their corresponding display names
+ * @returns {ReactElement} JSX element
+ */
+
 const CustomRadarChart = (data) => {
 
     const values = data.data.data.map(item => ({

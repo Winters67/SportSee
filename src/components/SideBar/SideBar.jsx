@@ -7,6 +7,17 @@ import yoga from "../../assets/icons/yoga.png"
 import "../SideBar/SideBar.scss"
 
 
+
+/**
+ * SideBar Component
+ * 
+ * This component is responsible for rendering the sidebar with links to the various routes.
+ * Each link is represented by an icon for a particular sport.
+ *
+ * @component
+ * @returns {ReactElement} JSX element
+ */
+
 const SideBar = () => {
     return (
         <div className='sideBarContainer'>

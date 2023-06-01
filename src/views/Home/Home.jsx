@@ -16,9 +16,13 @@ import mockData from '../../data/mockData';
 const useMockData = true;
 
 /**
- * Le composant Home est le composant principal de l'application.
- * Il gère les données de l'utilisateur, l'activité, les sessions en moyenne et la performance.
+ * The Home component is the main component of the application.
+ * It manages user data, activity, average sessions and performance
  */
+
+// Le composant Home est le composant principal de l'application.
+//  il gère les données de l'utilisateur, l'activité, les sessions en moyenne et la performance.
+
 const Home = () => {
     // Déclaration des états
     const [userData, setUserData] = useState(null);

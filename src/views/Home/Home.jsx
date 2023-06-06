@@ -11,14 +11,16 @@ import CustomLineChart from '../../components/CustomLineChart/CustomLineChart';
 import CustomRadarChart from '../../components/CustomRadarChart/CustomRadarChart';
 import CustomRadialBarChart from '../../components/CustomPieChart/CustomPieChart';
 import mockData from '../../data/mockData';
+import { useParams, Navigate } from 'react-router-dom';
 
 // Option pour utiliser les données mockées.
 const useMockData = true;
 
+
 /**
  * The Home component is the main component of the application.
  * It manages user data, activity, average sessions and performance
- */
+*/
 
 // Le composant Home est le composant principal de l'application.
 //  il gère les données de l'utilisateur, l'activité, les sessions en moyenne et la performance.
@@ -35,47 +37,51 @@ const Home = () => {
    * If useMock is true, it will use mocked data. Otherwise, it will fetch the real data.
    * @param {number} id - The user's ID.
    * @param {boolean} useMock - Whether to use mocked data or not.
-   */
-
+    */
 
 
     const fetchData = async (id, useMock) => {
-        if (useMock) {
-            // Utilisation de données mockées
-            const mockUserData = mockData.USER_MAIN_DATA.find(data => data.data.id === id);
-            const mockUserActivity = mockData.USER_ACTIVITY.find(data => data.data.userId === id);
-            const mockUserAverageSessions = mockData.USER_AVERAGE_SESSIONS.find(data => data.data.userId === id);
-            const mockUserPerformance = mockData.USER_PERFORMANCE.find(data => data.data.userId === id);
 
-            // Mise à jour des états avec les données mockées
-            setUserData(mockUserData);
-            setUserActivity(mockUserActivity);
-            setUserAverageSessions(mockUserAverageSessions);
-            setUserPerformance(mockUserPerformance);
-        } else {
-            // Récupération des données réelles
-            try {
-                const resultUserData = await DataService.getUserData(id);
-                const resultUserActivity = await DataService.getUserActivity(id);
-                const resultUserAverageSessions = await DataService.getUserAverageSessions(id);
-                const resultUserPerformance = await DataService.getUserPerformance(id);
+        useMock ? console.log("Je suis dans les données Mock") : console.log('Je récuperer les datas dans l API');
 
-                // Mise à jour des états avec les données réelles
-                setUserData(resultUserData.data);
-                setUserActivity(resultUserActivity.data);
-                setUserAverageSessions(resultUserAverageSessions.data);
-                setUserPerformance(resultUserPerformance.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
+        const resultUserData = useMock ? mockData.USER_MAIN_DATA.find(data => data.data.id === id) : await DataService.getUserData(id);
+        const resultUserActivity = useMock ? mockData.USER_ACTIVITY.find(data => data.data.userId === id) : await DataService.getUserActivity(id);
+        const resultUserAverageSessions = useMock ? mockData.USER_AVERAGE_SESSIONS.find(data => data.data.userId === id) : await DataService.getUserAverageSessions(id);
+        const resultUserPerformance = useMock ? mockData.USER_PERFORMANCE.find(data => data.data.userId === id) : await DataService.getUserPerformance(id);
+
+        console.log(resultUserData, resultUserActivity, resultUserAverageSessions, resultUserPerformance)
+
+        setUserData(useMock ? resultUserData : resultUserData.data);
+        setUserActivity(useMock ? resultUserActivity : resultUserActivity.data);
+        setUserAverageSessions(useMock ? resultUserAverageSessions : resultUserAverageSessions.data);
+        setUserPerformance(useMock ? resultUserPerformance : resultUserPerformance.data);
+
+        if (!resultUserData || !resultUserActivity || !resultUserAverageSessions || !resultUserPerformance) {
+            setInvalidUserId(true);
+            return;
         }
+
+
     };
+    const [invalidUserId, setInvalidUserId] = useState(false);
+
+    const { id } = useParams();
+    const userId = Number(id);
+
+
+
 
     // Effet pour récupérer les données lors du montage du composant
     useEffect(() => {
-        const userId = 18; // ID spécifique à utiliser
         fetchData(userId, useMockData);
-    }, []);
+    }, [userId]); // Mettre à jour l'effet pour qu'il dépende de userId
+    console.log(userId)
+
+    if (invalidUserId) {
+        return <Navigate to="/404" />;
+    }
+
+
 
     // Si les données ne sont pas encore chargées, afficher "Loading..."
     if (!userData || !userActivity || !userAverageSessions) {

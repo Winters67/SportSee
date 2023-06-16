@@ -1,6 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 import "./CustomPieChart.scss"
+import PropTypes from 'prop-types';
 
 
 /**
@@ -61,6 +62,10 @@ const CustomPieChart = ({ data }) => {
       </div>
     </div>
   );
+};
+
+CustomPieChart.propTypes = {
+  data: PropTypes.number.isRequired,
 };
 
 export default CustomPieChart;

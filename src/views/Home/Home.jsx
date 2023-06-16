@@ -14,7 +14,7 @@ import mockData from '../../data/mockData';
 import { useParams, Navigate } from 'react-router-dom';
 
 // Option pour utiliser les données mockées.
-const useMockData = true;
+const useMockData = false;
 
 
 /**

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Nutritional Component
@@ -25,6 +26,13 @@ const Nutritional = ({ logo, title, value, unit }) => {
             </div>
         </div>
     );
+};
+
+Nutritional.propTypes = {
+    logo: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    unit: PropTypes.string.isRequired
 };
 
 export default Nutritional;

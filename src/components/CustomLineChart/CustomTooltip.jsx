@@ -1,5 +1,6 @@
 import React from 'react';
 import './CustomTooltip.scss';
+import PropTypes from 'prop-types';
 
 /**
  * CustomTooltip Component
@@ -8,10 +9,9 @@ import './CustomTooltip.scss';
  * @param {Object} props
  * @param {boolean} props.active - Tooltip active state
  * @param {Object[]} props.payload - Array of data objects
- * @param {Object} props.coordinate - The coordinate for the tooltip
  * @returns {ReactElement|null} JSX element or null
  */
-const CustomTooltip = ({ active, payload, coordinate }) => {
+const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const { sessionLength } = payload[0].payload;
 
@@ -27,6 +27,17 @@ const CustomTooltip = ({ active, payload, coordinate }) => {
   }
 
   return null;
+};
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.arrayOf(
+    PropTypes.shape({
+      payload: PropTypes.shape({
+        sessionLength: PropTypes.number,
+      }),
+    })
+  ),
 };
 
 export default CustomTooltip;

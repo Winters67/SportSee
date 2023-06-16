@@ -1,6 +1,8 @@
 import React from 'react';
 import "../CustomBarChart/CustomBarChart.scss"
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, Text, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
+
 
 /**
  * CustomBarChart Component
@@ -39,6 +41,7 @@ const CustomBarChart = ({ data }) => {
     return null;
   };
 
+  
   return (
     <div className='CustomBar'>
       <h2 className='chart-title'>Activité quotidienne</h2>
@@ -63,7 +66,7 @@ const CustomBarChart = ({ data }) => {
                 margin: '20px',
                 bottom: '100px',
                 fontSize: '14px'
-
+                
               }}
               verticalAlign="top"
               align="right"
@@ -77,6 +80,17 @@ const CustomBarChart = ({ data }) => {
       </div>
     </div>
   );
+};
+
+CustomBarChart.propTypes = {
+  data: PropTypes.shape({
+    sessions: PropTypes.arrayOf(
+      PropTypes.shape({
+        kilogram: PropTypes.number.isRequired,
+        calories: PropTypes.number.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
 };
 
 export default CustomBarChart;

@@ -2,6 +2,8 @@ import React from 'react';
 import "./CustomLineChart.scss"
 import { LineChart, Line, Tooltip, XAxis } from 'recharts';
 import CustomTooltip from './CustomTooltip';
+import PropTypes from 'prop-types';
+
 
 /**
  * CustomLineChart Component
@@ -20,6 +22,8 @@ const CustomLineChart = ({ data }) => {
         return <div>Chargement...</div>;
     }
 
+    
+    
     return (
         <div style={{ position: 'relative' }}>
             <div className='chartLineLabel'>Durée moyenne des sessions</div>
@@ -49,5 +53,17 @@ const CustomLineChart = ({ data }) => {
         </div>
     );
 }
+
+
+CustomLineChart.propTypes = {
+    data: PropTypes.shape({
+        sessions: PropTypes.arrayOf(
+            PropTypes.shape({
+                sessionLength: PropTypes.number.isRequired,
+            })
+        ).isRequired,
+    }).isRequired,
+};
+
 
 export default CustomLineChart;

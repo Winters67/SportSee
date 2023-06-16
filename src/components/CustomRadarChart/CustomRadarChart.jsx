@@ -1,6 +1,7 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 import "./CustomRadarChart.scss"
+import PropTypes from 'prop-types';
 
 
 /**
@@ -37,5 +38,16 @@ const CustomRadarChart = (data) => {
 
     );
 };
+CustomRadarChart.propTypes = {
+    data: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          value: PropTypes.number.isRequired,
+          kind: PropTypes.string.isRequired
+        })
+      ).isRequired,
+      kind: PropTypes.objectOf(PropTypes.string).isRequired
+    }).isRequired
+  };
 
 export default CustomRadarChart;

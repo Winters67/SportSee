@@ -1,4 +1,9 @@
+@import "../../assets/scss/config";
+
 .CustomBar {
+  @media #{$BREAKPOINT-DESK} {
+    width: 90%;
+  }
   width: 100%;
   height: auto;
   position: relative;
@@ -26,6 +31,7 @@
     margin: 20px;
 
     p {
+    
       text-align: center;
       text-align: justify;
       font-size: 7px;
@@ -34,9 +40,13 @@
   }
 }
 .chart-container {
+  @media #{$BREAKPOINT-DESK} {
+    width:  auto;
+    height: auto;
+  }
   width: 100%;
-  width: 835px;
-  height: 320px;
+  max-width: 835px;
+  max-height: 320px;
 
   display: flex;
   justify-content: center;

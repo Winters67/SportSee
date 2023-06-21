@@ -14,40 +14,83 @@
 /*|---------------|MIXINS|---------------*/
 .homeContainer {
   margin-left: 226px;
+  width: 100vh;
+}
+@media only screen and (max-width : 1024px) {
+  .homeContainer {
+    margin-left: 110px;
+  }
 }
 .homeContainer h1 {
-  margin: 50px;
+  margin: 10px;
   padding: 10px;
   font-size: 48px;
   font-family: "bold";
+}
+@media only screen and (max-width : 1024px) {
+  .homeContainer h1 {
+    margin: 5px;
+    padding: 5px;
+  }
 }
 .homeContainer h1 span {
   color: #ff0101;
 }
 .homeContainer h2 {
-  padding: 20px;
+  padding: 10px;
   font-size: 18px;
   font-family: "medium";
 }
 .homeContainer .ChartContainer {
   max-width: 835px;
   max-height: 320px;
-  background-color: #cac5c5;
+  background-color: #fbfbfb;
 }
 
 .containerNutritional {
+  height: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width : 1024px) {
+  .containerNutritional {
+    flex-direction: row;
+  }
 }
 
 .sectionContainer {
   display: flex;
+  flex-direction: column;
   left: 226px;
   justify-content: space-between;
+  margin-right: 20px;
+}
+.LineContainer {
+  background-color: #ff0000;
+  height: 263px;
+  width: 258px;
+  border-radius: 5px;
 }
 
-.LineContainer {
-  background-color: red;
-  width: 500px;
-  height: 500px;
+.customContainer {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+}
+@media only screen and (max-width : 1024px) {
+  .customContainer {
+    flex-direction: column;
+  }
+}
+
+.containerChardCustom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+@media only screen and (max-width : 1024px) {
+  .containerChardCustom {
+    margin-top: 5px;
+  }
 }/*# sourceMappingURL=Home.css.map */

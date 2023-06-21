@@ -40,7 +40,6 @@ body {
 /*|---------------| App Color Schema|---------------*/
 /*|---------------|MIXINS|---------------*/
 .navContainer {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,7 +75,7 @@ body {
 /*|---------------|MIXINS|---------------*/
 .sideBarContainer {
   position: absolute;
-  height: 100vh;
+  height: calc(100vh - 80px);
   width: 117px;
   display: flex;
   flex-direction: column;
@@ -133,8 +132,7 @@ body {
   display: flex;
   width: 258px;
   height: 124px;
-  background-color: #cac5c5;
-  margin-bottom: 40px;
+  background-color: #FBFBFB;
   padding-left: 32px;
   align-items: center;
 }
@@ -179,7 +177,7 @@ img {
   margin-left: 226px;
 }
 .homeContainer h1 {
-  margin: 50px;
+  margin: 20px;
   padding: 10px;
   font-size: 48px;
   font-family: "bold";
@@ -195,16 +193,39 @@ img {
 .homeContainer .ChartContainer {
   max-width: 835px;
   max-height: 320px;
-  background-color: #cac5c5;
+  background-color: #fbfbfb;
 }
 
 .containerNutritional {
+  height: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .sectionContainer {
   display: flex;
+  flex-direction: column;
   left: 226px;
   justify-content: space-between;
+  margin-right: 20px;
+}
+
+.LineContainer {
+  background-color: #ff0000;
+  height: 263px;
+  width: 258px;
+  border-radius: 5px;
+}
+
+.customContainer {
+  display: flex;
+  margin: 20px;
+  padding: 20px;
+}
+
+.containerChardCustom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
 }/*# sourceMappingURL=Main.css.map */

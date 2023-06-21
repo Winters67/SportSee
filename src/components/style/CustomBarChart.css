@@ -1,7 +1,26 @@
+@font-face {
+  font-family: "Light";
+  src: local("Roboto-Light"), url("../../assets/font/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Medium";
+  src: local("Roboto-Medium"), url("../../assets/font/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bold";
+  src: local("Roboto-Bold"), url("../../assets/font/Roboto-Bold.ttf") format("truetype");
+}
+/*|---------------| App Color Schema|---------------*/
+/*|---------------|MIXINS|---------------*/
 .CustomBar {
   width: 100%;
   height: auto;
   position: relative;
+}
+@media only screen and (max-width : 1024px) {
+  .CustomBar {
+    width: 90%;
+  }
 }
 .CustomBar h2 {
   position: absolute;
@@ -13,7 +32,7 @@
   margin: 50px;
 }
 .CustomBar .custom-tooltip {
-  min-width: 39px;
+  min-width: 45px;
   height: 63px;
   color: #ffffff;
   background-color: #e60000;
@@ -32,11 +51,17 @@
 
 .chart-container {
   width: 100%;
-  width: 835px;
-  height: 320px;
+  max-width: 835px;
+  max-height: 320px;
   display: flex;
   justify-content: center;
   margin: 10px;
+}
+@media only screen and (max-width : 1024px) {
+  .chart-container {
+    width: auto;
+    height: auto;
+  }
 }
 
 .rechart-surface {

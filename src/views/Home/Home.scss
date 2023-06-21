@@ -1,9 +1,17 @@
 @import "../../assets/scss/config";
 
 .homeContainer {
+  @media #{$BREAKPOINT-DESK} {
+    margin-left: 110px;
+  }
   margin-left: 226px;
+  width: 100vh;
   h1 {
-    margin: 20px;
+    @media #{$BREAKPOINT-DESK} {
+      margin: 5px;
+      padding: 5px;
+    }
+    margin: 10px;
     padding: 10px;
 
     font-size: 48px;
@@ -13,7 +21,7 @@
     }
   }
   h2 {
-    padding: 20px;
+    padding: 10px;
     font-size: 18px;
     font-family: "medium";
   }
@@ -23,7 +31,11 @@
     background-color: #fbfbfb;
   }
 }
+
 .containerNutritional {
+  @media #{$BREAKPOINT-DESK} {
+    flex-direction: row;
+  }
   height: auto;
   display: flex;
   flex-direction: column;
@@ -31,6 +43,8 @@
 }
 
 .sectionContainer {
+  @media #{$BREAKPOINT-DESK} {
+  }
   display: flex;
   flex-direction: column;
   left: 226px;
@@ -46,12 +60,19 @@
   border-radius: 5px;
 }
 .customContainer {
+  @media #{$BREAKPOINT-DESK} {
+    flex-direction: column;
+  }
   display: flex;
-  margin: 20px;
-  padding: 20px;
+
+  margin: 10px;
+  padding: 10px;
 }
 
 .containerChardCustom {
+  @media #{$BREAKPOINT-DESK} {
+    margin-top: 5px;
+  }
   display: flex;
   justify-content: space-between;
   margin-top: 30px;

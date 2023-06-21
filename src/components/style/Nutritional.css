@@ -16,10 +16,16 @@
   display: flex;
   width: 258px;
   height: 124px;
-  background-color: #cac5c5;
-  margin-bottom: 40px;
+  background-color: #fbfbfb;
   padding-left: 32px;
   align-items: center;
+}
+@media only screen and (max-width : 1024px) {
+  .InfoNutritional {
+    flex-direction: row;
+    width: 200px;
+    height: 100px;
+  }
 }
 .InfoNutritional .uniteContainer {
   display: flex;
@@ -29,7 +35,7 @@
 }
 .InfoNutritional .uniteContainer .title {
   font-size: 14px;
-  color: #74798C;
+  color: #74798c;
 }
 .InfoNutritional .uniteContainer .value {
   font-size: 20px;

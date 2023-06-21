@@ -40,14 +40,14 @@ const CustomRadarChart = (data) => {
 };
 CustomRadarChart.propTypes = {
     data: PropTypes.shape({
-      data: PropTypes.arrayOf(
-        PropTypes.shape({
-          value: PropTypes.number.isRequired,
-          kind: PropTypes.string.isRequired
-        })
-      ).isRequired,
-      kind: PropTypes.objectOf(PropTypes.string).isRequired
+        data: PropTypes.arrayOf(
+            PropTypes.shape({
+                value: PropTypes.number.isRequired,
+                kind: PropTypes.number.isRequired
+            })
+        ).isRequired,
+        kind: PropTypes.objectOf(PropTypes.string).isRequired
     }).isRequired
-  };
+};
 
 export default CustomRadarChart;

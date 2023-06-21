@@ -1,3 +1,12 @@
+@import "../../assets/scss/config";
+
+.chartContainer {
+  position: relative;
+
+  @media #{$BREAKPOINT-DESK} {
+  }
+}
+
 .chartLineLabel {
   position: absolute;
   width: 60%;

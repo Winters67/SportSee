@@ -1,6 +1,6 @@
 import React from 'react';
 import "./CustomLineChart.scss"
-import { LineChart, Line, Tooltip, XAxis } from 'recharts';
+import { LineChart, Line, Tooltip, XAxis ,ResponsiveContainer} from 'recharts';
 import CustomTooltip from './CustomTooltip';
 import PropTypes from 'prop-types';
 
@@ -27,6 +27,7 @@ const CustomLineChart = ({ data }) => {
     return (
         <div style={{ position: 'relative' }}>
             <div className='chartLineLabel'>Durée moyenne des sessions</div>
+            <ResponsiveContainer width="100%" height={263}>
             <LineChart
                 width={258}
                 height={263}
@@ -50,6 +51,7 @@ const CustomLineChart = ({ data }) => {
                     dot={false}
                 />
             </LineChart>
+            </ResponsiveContainer>
         </div>
     );
 }

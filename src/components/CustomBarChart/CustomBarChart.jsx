@@ -41,12 +41,12 @@ const CustomBarChart = ({ data }) => {
     return null;
   };
 
-  
+
   return (
     <div className='CustomBar'>
       <h2 className='chart-title'>Activité quotidienne</h2>
       <div className="chart-container">
-        <ResponsiveContainer width="100%" aspect={3}>
+        <ResponsiveContainer width="100%" height="100%" aspect={3}>
           <BarChart data={data.sessions} margin={{
             top: 5,
             right: 30,
@@ -66,7 +66,7 @@ const CustomBarChart = ({ data }) => {
                 margin: '20px',
                 bottom: '100px',
                 fontSize: '14px'
-                
+
               }}
               verticalAlign="top"
               align="right"

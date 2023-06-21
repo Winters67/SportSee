@@ -14,8 +14,8 @@
 /*|---------------|MIXINS|---------------*/
 .sideBarContainer {
   position: absolute;
-  height: 100vh;
-  width: 117px;
+  height: calc(100vh - 80px);
+  max-width: 117px;
   display: flex;
   flex-direction: column;
   justify-content: center;

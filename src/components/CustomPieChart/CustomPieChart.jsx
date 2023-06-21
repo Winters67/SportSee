@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieChart, Pie, Cell } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import "./CustomPieChart.scss"
 import PropTypes from 'prop-types';
 
@@ -18,40 +18,42 @@ const CustomPieChart = ({ data }) => {
   const chartData = [{ name: 'Value', value: percentData }, { name: 'invert', value: 100 - percentData }];
 
   return (
-    <div style={{ position: 'relative', width: 258, height: 263 }}>
+    <div className='sizeContainer' >
       <div className='chartPieLabel'>Score</div>
-      <PieChart className='CustomPie' width={258} height={263}>
-        <Pie
-          data={chartData}
-          cx="50%"
-          cy="50%"
-          startAngle={90} // commencer à midi
-          endAngle={360 + 90} // utiliser l'angle de fin calculé
-          innerRadius="0%"
-          outerRadius="80%"
-          fill="#8884d8"
-          paddingAngle={0}
-          dataKey="value"
-        >
-          <Cell key={`cell-0`} fill="#FFFFFF" />
-          <Cell key={`cell-1`} fill="#FFFFFF" />
-        </Pie>
-        <Pie
-          data={[{ name: 'Value', value: percentData }]}
-          cx="50%"
-          cy="50%"
-          startAngle={90} // commencer à midi
-          endAngle={360 * (percentData / 100) + 90} // utiliser l'angle de fin calculé
-          innerRadius="70%"
-          outerRadius="80%"
-          fill="#8884d8"
-          paddingAngle={0}
-          dataKey="value"
-        >
-          <Cell key={`cell-2`} fill="#FF0000" />
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart className='CustomPie' width={258} height={263}>
+          <Pie
+            data={chartData}
+            cx="50%"
+            cy="50%"
+            startAngle={90} // commencer à midi
+            endAngle={360 + 90} // utiliser l'angle de fin calculé
+            innerRadius="0%"
+            outerRadius="80%"
+            fill="#8884d8"
+            paddingAngle={0}
+            dataKey="value"
+          >
+            <Cell key={`cell-0`} fill="#FFFFFF" />
+            <Cell key={`cell-1`} fill="#FFFFFF" />
+          </Pie>
+          <Pie
+            data={[{ name: 'Value', value: percentData }]}
+            cx="50%"
+            cy="50%"
+            startAngle={90} // commencer à midi
+            endAngle={360 * (percentData / 100) + 90} // utiliser l'angle de fin calculé
+            innerRadius="70%"
+            outerRadius="80%"
+            fill="#8884d8"
+            paddingAngle={0}
+            dataKey="value"
+          >
+            <Cell key={`cell-2`} fill="#FF0000" />
 
-        </Pie>
-      </PieChart>
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
       <div className='textCenter'>
         <span className='percent'>
           {`${percentData}%`}

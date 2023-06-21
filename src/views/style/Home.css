@@ -18,7 +18,7 @@
 }
 @media only screen and (max-width : 1024px) {
   .homeContainer {
-    margin-left: 110px;
+    margin-left: 130px;
   }
 }
 .homeContainer h1 {
@@ -68,8 +68,6 @@
 }
 .LineContainer {
   background-color: #ff0000;
-  height: 263px;
-  width: 258px;
   border-radius: 5px;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import "./CustomRadarChart.scss"
 import PropTypes from 'prop-types';
 
@@ -26,15 +26,19 @@ const CustomRadarChart = (data) => {
 
 
     return (
+        <div className='sizeContainer'>
 
-        <RadarChart className='CustomRadar' width={258}
-            height={263}
-            cx="50%" cy="50%" outerRadius="60%" data={values}>
-            <PolarGrid gridType="polygon" radialLines={false} />
-            <PolarAngleAxis dataKey="kind" tick={{ fontSize: '12px', fill: '#ffffff' }} />
-            <PolarRadiusAxis tick={false} axisLine={false} />
-            <Radar dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
-        </RadarChart>
+            <ResponsiveContainer width="100%" height="100%">
+                <RadarChart className='CustomRadar' width={258}
+                    height={263}
+                    cx="50%" cy="50%" outerRadius="60%" data={values}>
+                    <PolarGrid gridType="polygon" radialLines={false} />
+                    <PolarAngleAxis dataKey="kind" tick={{ fontSize: '12px', fill: '#ffffff' }} />
+                    <PolarRadiusAxis tick={false} axisLine={false} />
+                    <Radar dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
+                </RadarChart>
+            </ResponsiveContainer>
+        </div>
 
     );
 };

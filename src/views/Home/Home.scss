@@ -2,7 +2,7 @@
 
 .homeContainer {
   @media #{$BREAKPOINT-DESK} {
-    margin-left: 110px;
+    margin-left: 130px;
   }
   margin-left: 226px;
   width: 100vh;
@@ -54,14 +54,13 @@
 
 .LineContainer {
   background-color: #ff0000;
-  height: 263px;
-  width: 258px;
 
   border-radius: 5px;
 }
 .customContainer {
   @media #{$BREAKPOINT-DESK} {
     flex-direction: column;
+    width: auto;
   }
   display: flex;
 
@@ -72,6 +71,8 @@
 .containerChardCustom {
   @media #{$BREAKPOINT-DESK} {
     margin-top: 5px;
+    margin: 10px;
+    gap: 10px;
   }
   display: flex;
   justify-content: space-between;

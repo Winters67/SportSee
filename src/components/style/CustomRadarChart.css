@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "Light";
+  src: local("Roboto-Light"), url("../../assets/font/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Medium";
+  src: local("Roboto-Medium"), url("../../assets/font/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bold";
+  src: local("Roboto-Bold"), url("../../assets/font/Roboto-Bold.ttf") format("truetype");
+}
+/*|---------------| App Color Schema|---------------*/
+/*|---------------|MIXINS|---------------*/
+.sizeContainer {
+  width: 258px;
+  height: 263px;
+}
+@media only screen and (max-width : 1024px) {
+  .sizeContainer {
+    width: 258px;
+    height: 160px;
+  }
+}
+
 .CustomRadar {
   background: #282d30;
   border-radius: 5px;

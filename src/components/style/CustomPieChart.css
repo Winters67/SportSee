@@ -12,6 +12,18 @@
 }
 /*|---------------| App Color Schema|---------------*/
 /*|---------------|MIXINS|---------------*/
+.sizeContainer {
+  width: 258px;
+  height: 263px;
+  position: relative;
+}
+@media only screen and (max-width : 1024px) {
+  .sizeContainer {
+    width: 258px;
+    height: 160px;
+  }
+}
+
 .CustomPie {
   background: #fbfbfb;
 }

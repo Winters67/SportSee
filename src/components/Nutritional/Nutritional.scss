@@ -1,11 +1,11 @@
 @import "../../assets/scss/config.scss";
 
 .InfoNutritional {
-  @media #{$BREAKPOINT-DESK} {
-    flex-direction: row;
-    width: 200px;
-  height: 100px;
-  }
+  // @media #{$BREAKPOINT-DESK} {
+  //   flex-direction: row;
+  //   width: 200px;
+  // height: 100px;
+  // }
   
   display: flex;
   width: 258px;

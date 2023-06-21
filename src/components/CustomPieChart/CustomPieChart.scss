@@ -1,5 +1,17 @@
 @import "../../assets/scss/config.scss";
 
+
+.sizeContainer{
+  @media #{$BREAKPOINT-DESK} {
+    width: 230px;
+    height: 160px;
+    }
+    width: 258px;
+    height: 263px;
+    position: relative;
+
+}
+
 .CustomPie {
   background: #fbfbfb;
 }

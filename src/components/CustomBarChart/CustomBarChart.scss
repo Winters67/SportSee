@@ -1,9 +1,7 @@
 @import "../../assets/scss/config";
 
 .CustomBar {
-  @media #{$BREAKPOINT-DESK} {
-    width: 90%;
-  }
+  
   width: 100%;
   height: auto;
   position: relative;

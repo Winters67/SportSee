@@ -3,7 +3,6 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import "./CustomPieChart.scss"
 import PropTypes from 'prop-types';
 
-
 /**
  * CustomPieChart Component
  * 

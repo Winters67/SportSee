@@ -32,6 +32,8 @@ const Home = () => {
     const [userAverageSessions, setUserAverageSessions] = useState(null);
     const [userPerformance, setUserPerformance] = useState(null);
 
+    const { id } = useParams();
+    const userId = Number(id);
     /**
    * This function fetches user data based on the id.
    * If useMock is true, it will use mocked data. Otherwise, it will fetch the real data.
@@ -41,32 +43,31 @@ const Home = () => {
 
 
     const fetchData = async (id, useMock) => {
+        try {
 
-        useMock ? console.log("Je suis dans les données Mock") : console.log('Je récuperer les datas dans l API');
+            useMock ? console.log("Je suis dans les données Mock") : console.log('Je récuperer les datas dans l API');
 
-        const resultUserData = useMock ? mockData.USER_MAIN_DATA.find(data => data.data.id === id) : await DataService.getUserData(id);
-        const resultUserActivity = useMock ? mockData.USER_ACTIVITY.find(data => data.data.userId === id) : await DataService.getUserActivity(id);
-        const resultUserAverageSessions = useMock ? mockData.USER_AVERAGE_SESSIONS.find(data => data.data.userId === id) : await DataService.getUserAverageSessions(id);
-        const resultUserPerformance = useMock ? mockData.USER_PERFORMANCE.find(data => data.data.userId === id) : await DataService.getUserPerformance(id);
+            const resultUserData = useMock ? mockData.USER_MAIN_DATA.find(data => data.data.id === id) : await DataService.getUserData(id);
+            const resultUserActivity = useMock ? mockData.USER_ACTIVITY.find(data => data.data.userId === id) : await DataService.getUserActivity(id);
+            const resultUserAverageSessions = useMock ? mockData.USER_AVERAGE_SESSIONS.find(data => data.data.userId === id) : await DataService.getUserAverageSessions(id);
+            const resultUserPerformance = useMock ? mockData.USER_PERFORMANCE.find(data => data.data.userId === id) : await DataService.getUserPerformance(id);
 
-        console.log(resultUserData, resultUserActivity, resultUserAverageSessions, resultUserPerformance)
+            setUserData(useMock ? resultUserData : resultUserData.data);
+            setUserActivity(useMock ? resultUserActivity : resultUserActivity.data);
+            setUserAverageSessions(useMock ? resultUserAverageSessions : resultUserAverageSessions.data);
+            setUserPerformance(useMock ? resultUserPerformance : resultUserPerformance.data);
 
-        setUserData(useMock ? resultUserData : resultUserData.data);
-        setUserActivity(useMock ? resultUserActivity : resultUserActivity.data);
-        setUserAverageSessions(useMock ? resultUserAverageSessions : resultUserAverageSessions.data);
-        setUserPerformance(useMock ? resultUserPerformance : resultUserPerformance.data);
-
-        if (!resultUserData || !resultUserActivity || !resultUserAverageSessions || !resultUserPerformance) {
+            if (!resultUserData || !resultUserActivity || !resultUserAverageSessions || !resultUserPerformance) {
+                throw new Error('Invalid user data');
+            }
+        } catch (error) {
+            console.error('Une erreur s\'est produite lors de la récupération des données : ', error);
             setInvalidUserId(true);
-            return;
         }
-
-
     };
+
     const [invalidUserId, setInvalidUserId] = useState(false);
 
-    const { id } = useParams();
-    const userId = Number(id);
 
 
 
